@@ -1,0 +1,29 @@
+{
+  "name": "box2box/cdek",
+  "description": "Inegration (SDK) with CDEK API",
+  "keywords": [
+    "cdek",
+    "sdk",
+    "integration",
+    "REST"
+  ],
+  "minimum-stability": "dev",
+  "license": "proprietary",
+  "type": "extension",
+  "authors": [
+    {
+      "name": "vidmed",
+      "email": "mr.vidmed@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "box2box\\cdek\\": ""
+    }
+  },
+  "require": {
+    "php": ">=5.3.0",
+    "guzzle/guzzle": "3.9.*@dev",
+    "openlss/lib-array2xml": "0.0.9"
+  }
+}
