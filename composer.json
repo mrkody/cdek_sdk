@@ -12,8 +12,8 @@
   "type": "extension",
   "authors": [
     {
-      "name": "vidmed, mr_kody",
-      "email": "mr.vidmed@gmail.com, kody1994@mail.ru"
+      "name": "mr_kody",
+      "email": "kody1994@mail.ru"
     }
   ],
   "autoload": {
