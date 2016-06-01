@@ -1,6 +1,6 @@
 <?php 
 
-namespace box2box\cdek;
+namespace Mrkody\cdek;
 /**
  * Расчёт стоимости доставки СДЭК
  * Модуль для интернет-магазинов (ИМ)

@@ -1,6 +1,6 @@
 {
-  "name": "box2box/cdek",
-  "description": "Inegration (SDK) with CDEK API",
+  "name": "Mrkody/cdek",
+  "description": "Inegration (SDK) with CDEK API on PHP",
   "keywords": [
     "cdek",
     "sdk",
@@ -12,13 +12,13 @@
   "type": "extension",
   "authors": [
     {
-      "name": "vidmed",
-      "email": "mr.vidmed@gmail.com"
+      "name": "vidmed, mr_kody",
+      "email": "mr.vidmed@gmail.com, kody1994@mail.ru"
     }
   ],
   "autoload": {
     "psr-4": {
-      "box2box\\cdek\\": ""
+      "Mrkody\\cdek\\": ""
     }
   },
   "require": {
