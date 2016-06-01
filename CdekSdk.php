@@ -1,6 +1,6 @@
 <?php
 
-namespace Mrkody\cdek;
+namespace mrkody\cdek;
 
 use Exception;
 use LSS\XML2Array;
