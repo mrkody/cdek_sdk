@@ -497,7 +497,7 @@ class CdekSdk
      * @return object
      * @throws Exception
      */
-    private function call($method, $url, $decodeXml = true, $body = null, array $query = [])
+    protected function call($method, $url, $decodeXml = true, $body = null, array $query = [])
     {
         try {
             $client  = new Client();
