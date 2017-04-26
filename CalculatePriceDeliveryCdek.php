@@ -77,12 +77,13 @@ class CalculatePriceDeliveryCdek
      * Город-отправитель
      *
      * @param int $id города
+     * @throws \Exception
      */
     public function setSenderCityId($id)
     {
         $id = (int)$id;
         if ($id == 0) {
-            throw new Exception("Неправильно задан город-отправитель.");
+            throw new \Exception("Неправильно задан город-отправитель.");
         }
         $this->senderCityId = $id;
     }
@@ -91,12 +92,13 @@ class CalculatePriceDeliveryCdek
      * Город-получатель
      *
      * @param int $id города
+     * @throws \Exception
      */
     public function setReceiverCityId($id)
     {
         $id = (int)$id;
         if ($id == 0) {
-            throw new Exception("Неправильно задан город-получатель.");
+            throw new \Exception("Неправильно задан город-получатель.");
         }
         $this->receiverCityId = $id;
     }
@@ -105,12 +107,13 @@ class CalculatePriceDeliveryCdek
      * Устанавливаем тариф
      *
      * @param int $id тарифа
+     * @throws \Exception
      */
     public function setTariffId($id)
     {
         $id = (int)$id;
         if ($id == 0) {
-            throw new Exception("Неправильно задан тариф.");
+            throw new \Exception("Неправильно задан тариф.");
         }
         $this->tariffId = $id;
     }
@@ -119,12 +122,13 @@ class CalculatePriceDeliveryCdek
      * Устанавливаем режим доставки (дверь-дверь=1, дверь-склад=2, склад-дверь=3, склад-склад=4)
      *
      * @param int $id режим доставки
+     * @throws \Exception
      */
     public function setModeDeliveryId($id)
     {
         $id = (int)$id;
         if (!in_array($id, array(1, 2, 3, 4))) {
-            throw new Exception("Неправильно задан режим доставки.");
+            throw new \Exception("Неправильно задан режим доставки.");
         }
         $this->modeId = $id;
     }
@@ -136,13 +140,14 @@ class CalculatePriceDeliveryCdek
      * @param int $length длина, сантиметры
      * @param int $width ширина, сантиметры
      * @param int $height высота, сантиметры
+     * @throws \Exception
      */
     public function addGoodsItemBySize($weight, $length, $width, $height)
     {
         //проверка веса
         $weight = (float)$weight;
         if ($weight == 0.00) {
-            throw new Exception("Неправильно задан вес места № " . (count($this->getGoodslist()) + 1) . ".");
+            throw new \Exception("Неправильно задан вес места № " . (count($this->getGoodslist()) + 1) . ".");
         }
         //проверка остальных величин
         $paramsItem = array(
@@ -153,7 +158,7 @@ class CalculatePriceDeliveryCdek
         foreach ($paramsItem as $k => $param) {
             $param = (int)$param;
             if ($param == 0) {
-                throw new Exception("Неправильно задан параметр '" . $k . "' места № " . (count($this->getGoodslist()) + 1) . ".");
+                throw new \Exception("Неправильно задан параметр '" . $k . "' места № " . (count($this->getGoodslist()) + 1) . ".");
             }
         }
         $this->goodsList[] = array(
@@ -182,6 +187,7 @@ class CalculatePriceDeliveryCdek
      *
      * @param int $weight вес, килограммы
      * @param int $volume объёмный вес, метры кубические (А * В * С)
+     * @throws \Exception
      */
     public function addGoodsItemByVolume($weight, $volume)
     {
@@ -192,7 +198,7 @@ class CalculatePriceDeliveryCdek
         foreach ($paramsItem as $k => $param) {
             $param = (float)$param;
             if ($param == 0.00) {
-                throw new Exception("Неправильно задан параметр '" . $k . "' места № " . (count($this->getGoodslist()) + 1) . ".");
+                throw new \Exception("Неправильно задан параметр '" . $k . "' места № " . (count($this->getGoodslist()) + 1) . ".");
             }
         }
         $this->goodsList[] = array(
@@ -206,12 +212,13 @@ class CalculatePriceDeliveryCdek
      *
      * @param int $id тариф
      * @param int $priority default false приоритет
+     * @throws \Exception
      */
     public function addTariffPriority($id, $priority = 0)
     {
         $id = (int)$id;
         if ($id == 0) {
-            throw new Exception("Неправильно задан id тарифа.");
+            throw new \Exception("Неправильно задан id тарифа.");
         }
         $priority = ($priority > 0) ? $priority : count($this->tariffList) + 1;
         $this->tariffList[] = array(
@@ -224,6 +231,7 @@ class CalculatePriceDeliveryCdek
      * Расчет стоимости доставки
      *
      * @return bool
+     * @throws \Exception
      */
     public function calculate()
     {
@@ -273,7 +281,7 @@ class CalculatePriceDeliveryCdek
         }
         //проверка на подключние библиотеки curl
         if (!extension_loaded('curl')) {
-            throw new Exception("Не подключена библиотека CURL");
+            throw new \Exception("Не подключена библиотека CURL");
         }
         $response = $this->_getRemoteData($data);
 
