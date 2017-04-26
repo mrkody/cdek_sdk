@@ -4,35 +4,35 @@ require('vendor/autoload.php');
 try {
     $calls = [
         [
-           'TimeBeg'=> 'sdf',
-           'TimeEnd'=> 'sdf',
-           'LunchBeg'=> 'sdf',
-           'LunchEnd'=> 'sdf',
-           'SendCityCode'=> 'sdf',
-           'SendPhone'=> 'sdf',
-           'SenderName'=> 'sdf',
-           'Weight'=> 'sdf',
-           'Comment'=> 'sdf',
-           'Street'=> 'sdf',
-           'House'=> 'sdf',
-           'Flat'=> 'sdf',
-         ],
-        [
-            'Date'=> 'qq',
-            'TimeBeg'=> 'qq',
-            'TimeEnd'=> 'qq',
-            'LunchBeg'=> 'qq',
-            'LunchEnd'=> 'qq',
-            'SendCityCode'=> 'qq',
-            'SendPhone'=> 'qq',
-            'SenderName'=> 'qq',
-            'Weight'=> 'qq',
-            'Comment'=> 'qq',
-            'Street'=> 'qq',
-            'House'=> 'qq',
-            'Flat'=> 'qq',
+            'TimeBeg' => 'sdf',
+            'TimeEnd' => 'sdf',
+            'LunchBeg' => 'sdf',
+            'LunchEnd' => 'sdf',
+            'SendCityCode' => 'sdf',
+            'SendPhone' => 'sdf',
+            'SenderName' => 'sdf',
+            'Weight' => 'sdf',
+            'Comment' => 'sdf',
+            'Street' => 'sdf',
+            'House' => 'sdf',
+            'Flat' => 'sdf',
         ],
-      ];
+        [
+            'Date' => 'qq',
+            'TimeBeg' => 'qq',
+            'TimeEnd' => 'qq',
+            'LunchBeg' => 'qq',
+            'LunchEnd' => 'qq',
+            'SendCityCode' => 'qq',
+            'SendPhone' => 'qq',
+            'SenderName' => 'qq',
+            'Weight' => 'qq',
+            'Comment' => 'qq',
+            'Street' => 'qq',
+            'House' => 'qq',
+            'Flat' => 'qq',
+        ],
+    ];
 
 //    $orders = [
 //        //------1
@@ -202,10 +202,10 @@ try {
 //            ],
 //        ],
 //    ];
-    $inst  = new box2box\cdek\CdekSdk('bfec96cacce8e94b07833a7d2136917e', 'bed9a8c2de4aff3a5942259bb8a76e7e',false);
+    $inst = new box2box\cdek\CdekSdk('bfec96cacce8e94b07833a7d2136917e', 'bed9a8c2de4aff3a5942259bb8a76e7e', false);
 //     $res = $inst->statusReport(box2box\cdek\CdekSdk::URL_STATUS_REPORT_MAIN, 1, null,null,[['DispatchNumber'=>1014918451]]);
 //     $res = $inst->deliveryRequest(box2box\cdek\CdekSdk::URL_DELIVERY_REQUEST_MAIN, 'sdfsdffsdf285s18fsdf', $orders);
-     $res = $inst->callCourier(box2box\cdek\CdekSdk::URL_CALL_COURIER_MAIN, $calls);
+    $res = $inst->callCourier(box2box\cdek\CdekSdk::URL_CALL_COURIER_MAIN, $calls);
 
 
     print_r($res);
